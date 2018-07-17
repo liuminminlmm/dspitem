@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //generator函数
+        //可以多次执行yield
+        function* test() {
+            let res = yield new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(123);
+                }, 2000)
+            })
+            console.log(res);
+            let res2 = yield 1 + 2;
+            // console.log(res2);
+        }
+        let work = test();
+        //第一次执行next();
+        let res1 = work.next();
+        res1.value.then(res=>{
+            console.log(res);
+        })
+        //第二次执行next();
+        console.log(work.next());//false  value==>Promise {<resolved>: 123}
+        console.log(work.next());//false
+        console.log(work.next());//true
+    </script>
+</body>
+
+</html>

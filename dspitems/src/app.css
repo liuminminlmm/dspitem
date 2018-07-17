@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.root{
+    width: 100%;
+    height: 100%;
+}
+.app ul{
+    height: 100%;
+}
+.app{
+    width: 100%;
+    height: 100%;
+    display: flex;
+  
+}
+.appCont{
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+.loading{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,0);
+    /*css做动画效果*/
+    transition: all linear 3s;
+}
+.loading img{
+    left: 50%;
+    top:50%;
+    transform: translate3d(-50%,-50%,0);
+    position: absolute;
+}
+.active{
+    background: rgba(0, 0, 0,.5);
+}
+.login{
+     width: 100%;
+    height: 100%;
+}
+.mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    color: #fff;
+    background: rgba(0, 0, 0,.5);
+    font-size: 5rem;
+    text-align: center;
+}

@@ -1,0 +1,20 @@
+{
+    "presets": [
+        "env",
+        "react"
+    ],
+    //对动态import进行拆分的
+    "plugins": [
+        "syntax-dynamic-import",
+        //配合redux-saga使用
+        [
+            "transform-runtime",
+            {
+                "helpers": false,
+                "polyfill": false,
+                "regenerator": true,
+                "moduleName": "babel-runtime"
+            }
+        ]
+    ]
+}
